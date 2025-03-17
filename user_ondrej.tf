@@ -19,3 +19,14 @@ resource "keycloak_user" "ondrej" {
     temporary = true
   }
 }
+
+resource "keycloak_user_roles" "ondrej" {
+  realm_id = keycloak_realm.example.id
+  user_id  = keycloak_user.ondrej.id
+
+  role_ids = [
+    data.keycloak_role.default-roles-example.id,
+    data.keycloak_role.realm-admin.id,
+    keycloak_role.editor.id,
+  ]
+}
