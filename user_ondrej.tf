@@ -2,6 +2,7 @@ resource "keycloak_user" "ondrej" {
   lifecycle {
     ignore_changes = [
       required_actions,
+      federated_identity,
     ]
   }
 
