@@ -18,6 +18,12 @@ resource "keycloak_user" "test" {
     value     = "a"
     temporary = true
   }
+
+  federated_identity {
+    identity_provider = "SikaLabs_Training_SSO"
+    user_id           = "80a62513-9540-4d3d-abeb-be79813bd69e"
+    user_name         = "example_username"
+  }
 }
 
 resource "keycloak_user_roles" "test" {
