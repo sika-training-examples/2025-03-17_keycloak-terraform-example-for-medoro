@@ -23,6 +23,13 @@ resource "keycloak_role" "example_viewer" {
   name      = "viewer"
 }
 
+resource "keycloak_openid_audience_protocol_mapper" "example" {
+  realm_id                 = keycloak_realm.example.id
+  client_id                = keycloak_openid_client.example.id
+  included_client_audience = keycloak_openid_client.example.client_id
+  name                     = "audience-mapper"
+}
+
 output "example_client_secret" {
   value     = keycloak_openid_client.example.client_secret
   sensitive = true
