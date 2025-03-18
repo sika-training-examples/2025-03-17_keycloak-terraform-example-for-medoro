@@ -28,5 +28,6 @@ resource "keycloak_user_roles" "ondrej" {
     data.keycloak_role.default-roles-example.id,
     data.keycloak_role.realm-admin.id,
     keycloak_role.editor.id,
+    keycloak_role.example_editor.id,
   ]
 }
