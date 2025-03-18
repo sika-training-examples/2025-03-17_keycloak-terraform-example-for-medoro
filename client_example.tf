@@ -1,7 +1,7 @@
 resource "keycloak_openid_client" "example" {
   realm_id                        = keycloak_realm.example.id
   client_id                       = "example"
-  client_secret                   = "example"
+  client_secret                   = "example_secret"
   enabled                         = true
   standard_flow_enabled           = true
   direct_access_grants_enabled    = true
