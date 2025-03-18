@@ -24,6 +24,12 @@ resource "keycloak_user" "test" {
     user_id           = "80a62513-9540-4d3d-abeb-be79813bd69e"
     user_name         = "example_username"
   }
+
+  federated_identity {
+    identity_provider = "google"
+    user_id           = "117889960502401707888"
+    user_name         = "ondrejsikatest@gmail.com"
+  }
 }
 
 resource "keycloak_user_roles" "test" {
