@@ -5,6 +5,7 @@ resource "keycloak_realm" "example" {
   display_name_html      = "<h1 style=\"color: #5F673C; font-weight: bold;\">Example SSO</h1>"
   reset_password_allowed = true
   login_theme            = "training"
+  organizations_enabled  = true
   smtp_server {
     host = "maildev-smtp.maildev"
     port = "25"
