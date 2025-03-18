@@ -30,6 +30,22 @@ resource "keycloak_openid_audience_protocol_mapper" "example" {
   name                     = "audience-mapper"
 }
 
+resource "keycloak_openid_client_default_scopes" "example" {
+  realm_id  = keycloak_realm.example.id
+  client_id = keycloak_openid_client.example.id
+
+  default_scopes = [
+    "groups",
+  ]
+}
+
+resource "keycloak_openid_client_optional_scopes" "example" {
+  realm_id  = keycloak_realm.example.id
+  client_id = keycloak_openid_client.example.id
+
+  optional_scopes = []
+}
+
 output "example_client_secret" {
   value     = keycloak_openid_client.example.client_secret
   sensitive = true
